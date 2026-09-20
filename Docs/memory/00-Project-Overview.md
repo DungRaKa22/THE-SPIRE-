@@ -11,6 +11,19 @@ Tham chiếu Jump King: `C:\Documents\game 3d\Jump-King-main\Jump-King-main` —
 1200×900 px, hình học tầng trong `LevelSetupFunction.js`, ảnh tham chiếu trong
 `images/levelImages`. **Ảnh Jump King chỉ dùng tham chiếu bố cục, không đưa vào build.**
 
+## Cách nhóm vận hành (chốt 20/09/2026 — xem `Docs/team/`)
+
+Dự án chạy bằng **4 agent + chủ dự án**. Luật đầy đủ ở `Docs/team/README.md`; bốn điều quan trọng nhất:
+
+1. **Một người viết một file.** Ma trận sở hữu quyền sửa ở `Docs/team/00-CHARTER.md` §3.
+2. **Phân tầng model:** tầng A (Antigravity = toán/kiến trúc, Codex = code C#) làm việc cần suy
+   luận; tầng B (Freebuff/DeepSeek) làm khối lượng có script kiểm; Arena viết spec, review, merge.
+3. **Cổng script trước, cổng Unity sau.** `Tools/jumpcheck.py` kiểm mọi liên kết bệ bằng công thức
+   khóa (0 token). Unity chỉ chạy được trên máy chủ dự án ⇒ gom lô, xem `Docs/team/04-UNITY-GATE.md`.
+4. **Không chat LLM–LLM.** Bàn giao qua file/issue/PR.
+
+`Assets/Scenes/**.unity` **không ai sửa tay** — sinh bằng builder từ dữ liệu (ticket T-304).
+
 ## Quyết định đã chốt (đừng hỏi lại)
 
 1. **Hiện tại dừng ở tài liệu thiết kế** — người chơi quyết định khi nào code scene mới.
@@ -32,6 +45,8 @@ Tham chiếu Jump King: `C:\Documents\game 3d\Jump-King-main\Jump-King-main` —
 | `Docs/TheSpire-Level-Sector1.md` | Khu 1 Forgotten Kingdom — 40 bệ (01–40) |
 | `Docs/TheSpire-Level-Sector2.md` | Khu 2 Age of Steam — 43 bệ (41–83), toán piston |
 | `Docs/TheSpire-Level-Sector3.md` | Khu 3 Electric Age — 42 bệ (84–125), toán trạng thái |
+| `Docs/team/` | **Luật vận hành nhóm agent** (vai trò, pipeline, backlog, ngân sách token, cổng Unity) |
+| `Tools/jumpcheck.py` | Cổng kiểm ngân sách nhảy cho tài liệu khu — chạy trước mọi PR đụng bảng bệ |
 | `Docs/ArtPreviews/` | Ảnh GPT đã sinh (v1) + prompt tương ứng của từng ảnh |
 
 ## Cách làm việc

@@ -1,0 +1,61 @@
+THE SPIRE - deterministic jump-budget gate (Tools/jumpcheck.py)
+constants: g_eff=29.43, v=lerp(4,13,p), horiz=6*lerp(0.4,1,p), margins dy<=0.92H, dx<=0.85D
+findings: HARD=0 GEOM=4 WEAK=7 CONV=19 NUM=0
+FAIL: 0 unreachable link(s), 4 geometry mismatch(es).
+
+=== TheSpire-Level-Sector1.md ===
+-- GEOM: table geometry mismatches (4)
+   line 87 011 Choir Loft: dx documented 1.50, geometry says 1.80 (RISKY - link is harder than documented, from 010 Stone Cornice)
+   line 88 012 Knight Statue: dx documented 2.40, geometry says 2.80 (RISKY - link is harder than documented, from 011 Choir Loft)
+   line 128 021 Hoist Beam: dx documented 2.10, geometry says 1.70 (conservative, from 020 Scaffold Plank)
+   line 140 026 Crypt Vault: dx documented 0.70, geometry says 0.00 (conservative, from 025 Nave Roof)
+-- CONV: p column documents the height-only minimum (2)
+   line 69 003 Barrel Row: p=0.53 is the HEIGHT-only minimum; the real minimum for dy=1.20 dx=1.70 is p=0.58
+   line 70 004 Cart Shed: p=0.57 is the HEIGHT-only minimum; the real minimum for dy=1.30 dx=1.80 is p=0.62
+-- TIGHT: hardest links (5)
+   p_full=0.82  028 Stone Coffin
+   p_full=0.81  016 Mill Wall
+   p_full=0.79  018 Gate Arch
+   p_full=0.78  040 Summit Balcony
+   p_full=0.77  034 Sound Window
+-- COIN: coin groups (1)
+   40 numbered platforms -> 8 coin groups, 0 platform(s) outside a group
+
+=== TheSpire-Level-Sector2.md ===
+-- WEAK: p column matches no minimum (3)
+   line 276 065 Piston B9: p=0.40 matches neither minimum (full 0.54, height-only 0.35)
+   line 279 068 Piston B11: p=0.50 matches neither minimum (full 0.56, height-only 0.35)
+   line 295 073 Hopper Shelf: p=0.42 matches neither minimum (full 0.56, height-only 0.40)
+-- CONV: p column documents the height-only minimum (17)
+   line 205 043 Boiler Rim: p=0.57 is the HEIGHT-only minimum; the real minimum for dy=1.30 dx=2.00 is p=0.66
+   line 208 046 Piston A2: p=0.53 is the HEIGHT-only minimum; the real minimum for dy=1.20 dx=2.30 is p=0.70
+   line 209 047 Boiler Top: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.70 is p=0.53
+   line 226 052 Piston B4: p=0.25 is the HEIGHT-only minimum; the real minimum for dy=0.60 dx=1.30 is p=0.38
+   line 238 053 Vent Catwalk: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.70 is p=0.53
+   line 240 055 Pipe Bridge: p=0.57 is the HEIGHT-only minimum; the real minimum for dy=1.30 dx=1.90 is p=0.64
+   line 241 056 Piston B5: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=2.00 is p=0.60
+   line 243 058 Rest Roof — Engine Deck: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.60 is p=0.51
+   line 263 061 Flywheel Ledge: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=2.10 is p=0.62
+   line 265 063 Piston C2: p=0.65 is the HEIGHT-only minimum; the real minimum for dy=1.50 dx=2.20 is p=0.72
+   line 275 064 Gauge Panel: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.80 is p=0.55
+   line 277 066 Piston B10: p=0.65 is the HEIGHT-only minimum; the real minimum for dy=1.50 dx=2.20 is p=0.72
+   line 278 067 Relief Valve: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.60 is p=0.51
+   line 291 069 Firebox Ledge: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.70 is p=0.53
+   line 305 075 Chain Hoist: p=0.57 is the HEIGHT-only minimum; the real minimum for dy=1.30 dx=1.80 is p=0.62
+   line 308 078 Piston B12: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=1.70 is p=0.53
+   line 309 079 Gantry: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=2.30 is p=0.66
+-- TIGHT: hardest links (1)
+   p_full=0.78  041 Steam Threshold
+-- COIN: coin groups (1)
+   48 numbered platforms -> 9 coin groups, 3 platform(s) outside a group
+
+=== TheSpire-Level-Sector3.md ===
+-- WEAK: p column matches no minimum (4)
+   line 351 095 Regulator Deck B: p=0.68 matches neither minimum (full 0.63, height-only 0.63)
+   line 405 112 Discharge Rod: p=0.72 matches neither minimum (full 0.66, height-only 0.65)
+   line 406 113 Surge Arrester: p=0.72 matches neither minimum (full 0.65, height-only 0.63)
+   line 443 125 Rest Roof — High Tension Deck: p=0.65 matches neither minimum (full 0.57, height-only 0.40)
+-- COIN: coin groups (1)
+   42 numbered platforms -> 8 coin groups, 2 platform(s) outside a group
+
+FAIL: 0 unreachable link(s), 4 geometry mismatch(es).

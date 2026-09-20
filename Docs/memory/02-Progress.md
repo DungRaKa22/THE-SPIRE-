@@ -2,6 +2,16 @@
 
 ## Đã xong
 
+### Vận hành nhóm (mới 20/09/2026)
+- ✅ `Docs/team/` — hiến chương 4 agent, ma trận sở hữu file, pipeline 6 bước, DoR/DoD,
+  định tuyến model theo tầng A/B, quy trình cổng Unity gom lô, prompt khởi động cho 3 agent.
+- ✅ `Tools/jumpcheck.py` — cổng kiểm ngân sách nhảy chạy bằng Python (0 token), ghi
+  `Docs/TheSpireJumpCheck.txt`. Chạy lần đầu trên khu 1–3 (125 bệ) đã phát hiện:
+  **HARD=0** (không có liên kết nào bất khả thi — tin tốt), **GEOM=4** lỗi hình học bảng ở khu 1
+  (2 dòng ghi Δx **thấp hơn** thực tế ⇒ bệ khó hơn tài liệu: `011 Choir Loft`, `012 Knight Statue`),
+  **CONV=19** dòng ghi `p` theo mức tối thiểu **chỉ độ cao** trong khi tài liệu tuyên bố `p` là
+  mức tối thiểu đầy đủ (khu 2: 17/48 dòng), **WEAK=7** dòng không khớp cách tính nào.
+
 ### Tài liệu thiết kế
 - ✅ Kế hoạch tổng `TheSpire-Remake-Plan.md` — thông số khóa, 525 m, lộ trình,
   §1.5b "cửa sổ thời gian" làm thước đo chung, quyết định đã chốt ghi ở đầu file.
@@ -31,6 +41,9 @@
 
 ## Chưa làm
 
+- ⏳ **Ticket T-003 (tầng A):** chốt **quy ước bảng bệ v2** — định nghĩa cột `p` và cách ghi giới
+  hạn trần/che khuất. Phải xong **trước khi** ai đó điền bảng khu 4–8, nếu không mỗi agent sẽ
+  theo một quy ước khác nhau. Ticket T-007 (tầng B) sửa 4 lỗi hình học khu 1.
 - ⏳ **Chạy play-check khu điện trong Play Mode** (menu JumpDummy → Run Electric
   Platform Checks) — chỉ người dùng làm được; kết quả về
   `Docs/TheSpireElectricValidation.txt`. Cho tới khi đó cơ chế hất điện chỉ được
