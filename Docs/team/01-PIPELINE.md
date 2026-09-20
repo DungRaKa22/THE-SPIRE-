@@ -35,6 +35,18 @@ Bước IMPLEMENT–DELIVER làm được ở bất kỳ máy nào, **không c�
 3. Muốn Arena tự đóng/comment/nhãn được thì **kết nối lại GitHub trong Arena** với quyền đầy đủ.
    Cho tới lúc đó mọi thứ vẫn chạy, chỉ thêm 1 bước tay cho chủ dự án.
 
+### Bật ruleset bảo vệ `main` (chốt D6 = BẬT, chỉ chủ dự án làm được)
+
+1. GitHub → repo `THE-SPIRE-` → **Settings** → **Rules** → **Rulesets** → **New branch ruleset**.
+2. Name: `protect-main`; **Enforcement status: Active**.
+3. **Target branches** → Add target → Include by pattern → `main`.
+4. Tick **Require a pull request before merging** (đừng tick *Require approvals* — Arena không tự
+   approve PR của chính mình, sẽ tự khoá mình).
+5. Tick **Block force pushes** → **Create**.
+
+Tác dụng: mọi thay đổi vào `main` phải đi qua PR; lịch sử không bị ghi đè; nhánh mà Unity của bạn
+mở luôn là nhánh đã qua cổng. Arena push nhánh `arena/…` nên không bị ảnh hưởng.
+
 ## 3. Kênh nộp bài (vì chỉ Arena push được)
 
 Agent **không** commit, **không** tạo nhánh, **không** push. Nộp bài = một thư mục:

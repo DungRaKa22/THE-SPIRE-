@@ -10,6 +10,16 @@ chỉ làm repo. Đồng thời Unity trong repo này là **studio duy nhất** 
 - Giữa hai cửa sổ, các agent vẫn làm việc được: M1 (tài liệu) và các cổng script **không cần Unity**.
 - Không merge PR code vào `main` trước khi qua cổng (trừ tài liệu thuần).
 
+## 1b. Nhịp cổng — chốt 20/09/2026: **theo lô**
+
+- Arena theo dõi các PR đang chờ. Khi có **≥ 1 PR đụng `Assets/**`** (và ít nhất mỗi tuần nếu có
+  PR loại đó), Arena gom thành **một cổng** và viết checklist kèm số PR vào issue/PR.
+- Chủ dự án mở Unity **một lần**, chạy hết checklist của cả lô, dán kết quả lại.
+- PR tài liệu `.md` và `Tools/*.py` **không** vào lô (đã có cổng script).
+- Lô phát hiện lỗi ⇒ người sở hữu ticket sửa, để dành cho lô sau; **không** merge PR lỗi.
+
+Ưu điểm của lô: bạn bị làm phiền ít lần nhất, và mỗi lần kiểm được nhiều thay đổi một lượt.
+
 ## 2. Checklist chạy cổng (copy vào issue cổng mỗi lần)
 
 ```

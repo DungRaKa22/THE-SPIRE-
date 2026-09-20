@@ -26,6 +26,10 @@
   `PlatformCoins.cs`, `PlatformCoinPickup.cs`, SCORE trong `CyberpunkPresentation`, phần coin trong
   `GameSession` và `NeonAscentChecks` → **ticket T-210**, để lại cho giai đoạn code.
 - ✅ **Chưa code gì mới cho tới khi thiết kế đủ 8 khu** (M2 vẫn đóng).
+- ✅ **Cổng Unity theo lô (D4)**: gom các PR đụng `Assets/**` rồi chủ dự án mở Unity một lần;
+  PR tài liệu/tool không cần cổng.
+- ✅ **Bật ruleset bảo vệ `main` (D6)**: chủ dự án tạo (Arena không có quyền), hướng dẫn ở
+  `Docs/team/01-PIPELINE.md` §2.
 - ✅ T-005 một phần: board Issues đã tạo (#2–#9); không gắn được nhãn (403) ⇒ ghi nhãn trong
   `Docs/team/02-BACKLOG.md`.
 

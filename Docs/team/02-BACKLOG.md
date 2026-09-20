@@ -24,9 +24,9 @@ Cổng: `jc` = `Tools/jumpcheck.py` · `ac` = `Tools/apicheck.py` · `u` = cổn
 | D1 | Cách ghi cột `p` | ✅ đã chốt trong T-003: `p_min` đầy đủ + thêm `p_max` |
 | D2 | Luật coin | ✅ **chốt 20/09: bỏ hoàn toàn cơ chế coin** (chỉ là demo, game không có điểm số). Đã dọn khỏi mọi tài liệu/prompt/công cụ; code cũ xoá ở **T-210** |
 | D3 | Bật code M2 ngay? | ✅ **chốt 20/09: KHÔNG** — thiết kế đủ 8 khu rồi mới code (đúng `memory/00`, chủ dự án xác nhận lại) |
-| D4 | Nhịp cổng Unity | ⏳ **chờ chủ dự án** — xem `04-UNITY-GATE.md`, 3 lựa chọn: mỗi PR code / theo lô ≥ 3 PR / cửa sổ cố định hằng tuần |
+| D4 | Nhịp cổng Unity | ✅ **chốt 20/09: theo lô** — gom các PR code đang chờ rồi mở Unity một lần; ít nhất 1 lần/tuần nếu có PR code |
 | D5 | Mỗi agent có PAT riêng? | ✅ không — chỉ Arena push |
-| D6 | Ruleset chặn push thẳng vào `main`? | ⏳ **chờ chủ dự án** — bật/tắt, Arena không có quyền tạo |
+| D6 | Ruleset chặn push thẳng vào `main`? | ✅ **chốt 20/09: BẬT** — chủ dự án tạo (Arena không có quyền); hướng dẫn 5 bước ở `01-PIPELINE.md` §2 |
 | D7 | Issues làm board chính thức? | ✅ đã chốt (kèm hạn chế quyền ở `01-PIPELINE.md` §2) |
 
 > **Hệ quả của D2 và D3 với lộ trình:** M1 (thiết kế 8 khu) là milestone duy nhất chạy được ngay;
@@ -90,4 +90,4 @@ Mỗi khu 3 nhịp: **A1** khung mechanic + toán (Antigravity) → **B** bảng
 | **Antigravity** | T-101 (khu 4 khung + toán) | `T-101/files/Docs/TheSpire-Level-Sector4.md` | sau T-003R |
 | **Freebuff** | T-009 (chuyển bảng khu 1–3 sang v2) | 3 file Sector + `report.md` | — |
 | **Codex** | T-004 (`Tools/apicheck.py`) | `T-004/files/Tools/apicheck.py` + `report.md` | — |
-| **Chủ dự án** | trả lời **D4** (nhịp cổng Unity) và **D6** (ruleset bảo vệ `main`) + kết nối lại GitHub (tuỳ chọn) | trả lời trong PR #1 | — |
+| **Chủ dự án** | bật ruleset bảo vệ `main` (5 bước ở `01-PIPELINE.md` §2) + kết nối lại GitHub nếu muốn Arena tự đóng/comment issue | — | — |
