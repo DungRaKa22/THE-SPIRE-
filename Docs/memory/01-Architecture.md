@@ -65,8 +65,9 @@ Bảng bệ trong `Docs/TheSpire-Level-Sector*.md` là **hợp đồng dữ li�
   Machine 12% / Digital 13% / Neon 20% (105 m) / Singularity 15% / Sky 3%.
 - Mục tiêu: **`TheSpire.unity` duy nhất**, `SectorBlueprint` (dữ liệu kê khai) +
   builder dựng một lần + `SectorStreamer` bật/tắt theo camera.
-- Bệ đánh số liên tục toàn tháp (khu 3 kết thúc ở 125). Coin: nhóm 5 bệ, 1 coin/nhóm
-  (theo `PlatformCoins` hiện có).
+- Bệ đánh số liên tục toàn tháp (khu 3 kết thúc ở 125) — khoá **thứ tự tuyến leo** cho validator,
+  builder và mọi bảng số liệu. **Cơ chế coin đã bị loại bỏ hoàn toàn (20/09/2026)**: không nhóm
+  5 bệ, không điểm số; code cũ xoá ở T-210 (giai đoạn code).
 - Quy tắc khu (từ kế hoạch): p ≤ 0.80 phần thân, ≤ 0.90 điểm cao trào; bệ nghỉ
   **số tuyệt đối** 2/khu (không dùng tỷ lệ); rơi ngắn giữa khu, rơi dài chỉ khi
   đã có bệ bắt rơi; §1.5b — mọi mechanic mới phải diễn đạt được bằng "cửa sổ hành động".
@@ -80,7 +81,7 @@ Bảng bệ trong `Docs/TheSpire-Level-Sector*.md` là **hợp đồng dữ li�
 | `ElectricPlatform.cs` | Không di chuyển, không tắt collider; LIVE → **poll `OverlapBox` mỗi FixedUpdate** (không dùng collision event — lỗi đã chặn) |
 | `MovingSurface.cs` | Interface `IMovingSurface.SurfaceVelocity` cho piston/băng chuyền/drone |
 | `GameSession.cs` | Trạng thái Title/Playing/Paused/Complete, lưu bằng PlayerPrefs |
-| `PlatformCoins.cs` / `PlatformCoinPickup.cs` | Coin theo nhóm 5 bệ |
+| `PlatformCoins.cs` / `PlatformCoinPickup.cs` | **Cơ chế demo đã bỏ** — xoá ở T-210, không dùng làm mẫu nữa |
 | `Cyberpunk/*` | HUD, camera, SFX, Animator state (đọc `LastImpulseTime` cho state Bounce) |
 | `Editor/ElectricPlatformChecks.cs` | Menu check khu điện — **chưa ai chạy được Play Mode** |
 

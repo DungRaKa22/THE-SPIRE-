@@ -19,6 +19,16 @@
   **CONV=19** dòng ghi `p` theo mức tối thiểu **chỉ độ cao** trong khi tài liệu tuyên bố `p` là
   mức tối thiểu đầy đủ (khu 2: 17/48 dòng), **WEAK=7** dòng không khớp cách tính nào.
 
+### Quyết định của chủ dự án (20/09/2026)
+- ✅ **Bỏ hoàn toàn cơ chế coin** (chỉ là demo, THE SPIRE không có điểm số). Đã dọn coin khỏi:
+  `Docs/TheSpire-Level-Sector1/2/3.md`, `Docs/TheSpire-Remake-Plan.md` (§2.3 blueprint, §2.6, §5),
+  `Docs/TheSpire-ArtPrompts.md` (HUD), `README.md`, `Docs/memory/*`. Còn lại phải xoá trong code:
+  `PlatformCoins.cs`, `PlatformCoinPickup.cs`, SCORE trong `CyberpunkPresentation`, phần coin trong
+  `GameSession` và `NeonAscentChecks` → **ticket T-210**, để lại cho giai đoạn code.
+- ✅ **Chưa code gì mới cho tới khi thiết kế đủ 8 khu** (M2 vẫn đóng).
+- ✅ T-005 một phần: board Issues đã tạo (#2–#9); không gắn được nhãn (403) ⇒ ghi nhãn trong
+  `Docs/team/02-BACKLOG.md`.
+
 ### Tài liệu thiết kế
 - ✅ Kế hoạch tổng `TheSpire-Remake-Plan.md` — thông số khóa, 525 m, lộ trình,
   §1.5b "cửa sổ thời gian" làm thước đo chung, quyết định đã chốt ghi ở đầu file.

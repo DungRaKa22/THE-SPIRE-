@@ -18,11 +18,11 @@ Prototype đầu tiên: Unity 6000.5.7f1, 2D, bàn phím.
 
 Màn Cyberpunk có vòng chơi hoàn chỉnh: Enter/Space bắt đầu hoặc tiếp tục, N tạo lượt mới, Esc/P tạm dừng. Game tự lưu thời gian, số lần nhảy và vị trí an toàn cao nhất; rơi khỏi màn sẽ trở lại vị trí đó. Đạt beacon trên mái nhà để hoàn thành và lưu thời gian tốt nhất.
 
-Coin: mỗi nhóm đủ 5 bục theo số thứ tự tên bục chọn ngẫu nhiên 1 bục để sinh 1 coin vàng, ở vị trí ngẫu nhiên trên mặt bục. Chạm coin cộng 10 điểm, hiển thị ở SCORE. Tường, sàn và trần không được tính là bục. Nhóm cuối chưa đủ 5 bục không sinh coin (màn 8 bục hiện tại có 1 coin). Lượt mới đổi vị trí và đặt điểm về 0; tiếp tục lượt cũ giữ vị trí coin, điểm và trạng thái đã nhặt. Rơi xuống không làm coin xuất hiện lại.
+**Coin là cơ chế demo, đã quyết định loại bỏ hoàn toàn** (20/09/2026) vì THE SPIRE không có điểm số. Code cũ (`PlatformCoins`, `PlatformCoinPickup`, SCORE trong HUD) sẽ xoá ở ticket T-210; tài liệu thiết kế đã sạch coin. Số đầu tên bệ vẫn giữ vì là khoá thứ tự tuyến leo cho validator và builder.
 
-Neon Ascent có 7 coin mỗi lượt (tối đa 70 điểm) và lưu tiến trình riêng với màn cũ. Đường leo lấy cảm hứng bố cục 5 ảnh tham khảo: khối kiến trúc hai bên, bệ lệch trái/phải, mái nghỉ rộng và bệ hẹp đan xen. Hình ảnh và địa hình được dựng mới theo phong cách cyberpunk. Camera tiếp tục bám độ cao; các khu đổi từ xanh tối ở hẻm sang tím sáng ở đỉnh.
+Neon Ascent lưu tiến trình riêng với màn cũ. Đường leo lấy cảm hứng bố cục 5 ảnh tham khảo: khối kiến trúc hai bên, bệ lệch trái/phải, mái nghỉ rộng và bệ hẹp đan xen. Hình ảnh và địa hình được dựng mới theo phong cách cyberpunk. Camera tiếp tục bám độ cao; các khu đổi từ xanh tối ở hẻm sang tím sáng ở đỉnh.
 
-Chỉnh trực tiếp các đối tượng trong **Neon Ascent Platforms** ở scene `Assets/Scenes/NeonAscent.unity`. Ba prefab bệ tái sử dụng nằm trong `Assets/Prefabs/Cyberpunk/ClimbProps`; ảnh gốc và thiết lập import nằm trong `Assets/Art/Cyberpunk/ClimbProps`. Số đầu tên bệ xác định thứ tự chia nhóm coin. `JumpDummy → Build Windows Playtest` ưu tiên màn Neon Ascent.
+Chỉnh trực tiếp các đối tượng trong **Neon Ascent Platforms** ở scene `Assets/Scenes/NeonAscent.unity`. Ba prefab bệ tái sử dụng nằm trong `Assets/Prefabs/Cyberpunk/ClimbProps`; ảnh gốc và thiết lập import nằm trong `Assets/Art/Cyberpunk/ClimbProps`. Số đầu tên bệ xác định thứ tự tuyến leo. `JumpDummy → Build Windows Playtest` ưu tiên màn Neon Ascent.
 
 ## Chỉnh cảm giác nhảy
 

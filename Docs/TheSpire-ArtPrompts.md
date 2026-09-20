@@ -264,7 +264,7 @@ preserved in digital data. Monochrome-friendly, readable at small size.
 UI elements on transparent alpha: a slim horizontal charge meter frame, a charge fill
 bar (solid, with a distinct "max charge" cap end), a pause icon, a restart icon,
 a sector-progress vertical rail with 8 tick marks, a small danger triangle icon,
-a coin icon (spinning gold coin), and a lore fragment icon (torn page / data shard).
+and a lore fragment icon (torn page / data shard).
 Bright rim highlights so the meter reads on both dark and bright backgrounds.
 No text.
 ```

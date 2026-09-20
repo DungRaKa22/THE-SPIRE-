@@ -49,6 +49,9 @@ T-0xx/
 
 Luật nộp:
 - **File hoàn chỉnh**, không phải diff từng dòng (tránh lệch whitespace khi ghép).
+- **Ghi rõ baseline**: dòng đầu `report.md` là `baseline: <sha 7 ký tự>` của commit agent đã lấy làm
+  gốc. Vì nộp file nguyên khối, nếu repo đã đổi sau sha đó thì Arena phải ghép tay — nên luôn
+  `git pull` trước khi bắt đầu, và nộp sớm.
 - Chỉ nộp file thuộc phạm vi ticket. Nộp thừa file = Arena trả lại.
 - Chủ dự án lưu thư mục vào `~/inbox/T-0xx/` — **ngoài repo**, không commit vào Git.
 - `report.md` đúng 4 mục: **Đã làm** · **Cổng đã chạy (dán nguyên văn output)** ·

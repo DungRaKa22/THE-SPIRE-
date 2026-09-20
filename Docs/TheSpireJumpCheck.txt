@@ -18,8 +18,8 @@ FAIL: 0 unreachable link(s), 4 geometry mismatch(es).
    p_full=0.79  018 Gate Arch
    p_full=0.78  040 Summit Balcony
    p_full=0.77  034 Sound Window
--- COIN: coin groups (1)
-   40 numbered platforms -> 8 coin groups, 0 platform(s) outside a group
+-- COUNT: numbered platforms (route order) (1)
+   40 numbered platforms
 
 === TheSpire-Level-Sector2.md ===
 -- WEAK: p column matches no minimum (3)
@@ -46,8 +46,8 @@ FAIL: 0 unreachable link(s), 4 geometry mismatch(es).
    line 309 079 Gantry: p=0.40 is the HEIGHT-only minimum; the real minimum for dy=0.90 dx=2.30 is p=0.66
 -- TIGHT: hardest links (1)
    p_full=0.78  041 Steam Threshold
--- COIN: coin groups (1)
-   48 numbered platforms -> 9 coin groups, 3 platform(s) outside a group
+-- COUNT: numbered platforms (route order) (1)
+   48 numbered platforms
 
 === TheSpire-Level-Sector3.md ===
 -- WEAK: p column matches no minimum (4)
@@ -55,7 +55,7 @@ FAIL: 0 unreachable link(s), 4 geometry mismatch(es).
    line 405 112 Discharge Rod: p=0.72 matches neither minimum (full 0.66, height-only 0.65)
    line 406 113 Surge Arrester: p=0.72 matches neither minimum (full 0.65, height-only 0.63)
    line 443 125 Rest Roof — High Tension Deck: p=0.65 matches neither minimum (full 0.57, height-only 0.40)
--- COIN: coin groups (1)
-   42 numbered platforms -> 8 coin groups, 2 platform(s) outside a group
+-- COUNT: numbered platforms (route order) (1)
+   42 numbered platforms
 
 FAIL: 0 unreachable link(s), 4 geometry mismatch(es).

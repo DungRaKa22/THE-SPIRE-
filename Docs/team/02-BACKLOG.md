@@ -17,17 +17,21 @@ Cổng: `jc` = `Tools/jumpcheck.py` · `ac` = `Tools/apicheck.py` · `u` = cổn
 | Q3 | Ưu tiên | **Chất lượng trước** — mọi PR code có review đối kháng của Antigravity |
 | Q4 | Khởi động | **M0 + M1 song song**, nhưng chốt quy ước bảng trước khi ai điền số |
 
-## Việc còn phải chốt (D1–D7)
+## Quyết định còn lại (D1–D7)
 
-| # | Câu hỏi | Đề xuất của Arena |
+| # | Câu hỏi | Trạng thái |
 |---|---|---|
-| D1 | Cột `p`: sửa số theo mức tối thiểu đầy đủ, hay đổi nghĩa cột? | Đã chốt trong T-003: đổi thành `p_min` đầy đủ + thêm `p_max` |
-| D2 | Luật coin khi ~330 bệ: 1/5 hay 1/8? | Giữ 1/5 cho khu 1–3, thử 1/8 từ khu 4 (đo bằng số coin/khu) |
-| D3 | Bật M2 (code mechanic) ngay? | Nên bật T-201 sớm để chứng minh bản sửa `Grounded` chạy thật |
-| D4 | Nhịp cổng Unity | Cửa sổ cố định mỗi tuần + mỗi khi có ≥ 3 PR xếp hàng |
-| D5 | Mỗi agent có PAT riêng? | Không — theo Q2 |
-| D6 | Ruleset chặn push thẳng vào `main`? | Nên bật (chủ dự án làm, Arena không có quyền) |
-| D7 | Dùng Issues làm board chính thức? | Đã chốt — kèm hạn chế quyền ở `01-PIPELINE.md` §2 |
+| D1 | Cách ghi cột `p` | ✅ đã chốt trong T-003: `p_min` đầy đủ + thêm `p_max` |
+| D2 | Luật coin | ✅ **chốt 20/09: bỏ hoàn toàn cơ chế coin** (chỉ là demo, game không có điểm số). Đã dọn khỏi mọi tài liệu/prompt/công cụ; code cũ xoá ở **T-210** |
+| D3 | Bật code M2 ngay? | ✅ **chốt 20/09: KHÔNG** — thiết kế đủ 8 khu rồi mới code (đúng `memory/00`, chủ dự án xác nhận lại) |
+| D4 | Nhịp cổng Unity | ⏳ **chờ chủ dự án** — xem `04-UNITY-GATE.md`, 3 lựa chọn: mỗi PR code / theo lô ≥ 3 PR / cửa sổ cố định hằng tuần |
+| D5 | Mỗi agent có PAT riêng? | ✅ không — chỉ Arena push |
+| D6 | Ruleset chặn push thẳng vào `main`? | ⏳ **chờ chủ dự án** — bật/tắt, Arena không có quyền tạo |
+| D7 | Issues làm board chính thức? | ✅ đã chốt (kèm hạn chế quyền ở `01-PIPELINE.md` §2) |
+
+> **Hệ quả của D2 và D3 với lộ trình:** M1 (thiết kế 8 khu) là milestone duy nhất chạy được ngay;
+> M2–M5 đóng cho tới khi đủ 8 doc khu. T-210 (xoá code coin) thuộc M2, không làm sớm hơn.
+> Việc bỏ coin **không** làm mất số bệ: số vẫn là khoá thứ tự tuyến leo cho validator/builder.
 
 ## M0 — Team OS & cổng kiểm
 
@@ -56,7 +60,7 @@ Mỗi khu 3 nhịp: **A1** khung mechanic + toán (Antigravity) → **B** bảng
 | T-105 | — | Khu 7 The Singularity (vùng trọng lực) | A1/B | Antigravity → Freebuff | `[ ]` |
 | T-106 | — | Khu 8 The Sky + 2 ending | A/B | Antigravity → Freebuff | `[ ]` |
 | T-107 | — | Bảng tra "cửa sổ hành động" hợp nhất khu 2–8 (§1.5b) | A | Antigravity | `[ ]` |
-| T-108 | — | Gộp chỉ mục bệ toàn tháp (~330) + chốt luật coin (D2) | B | Freebuff | `[ ]` |
+| T-108 | — | Gộp chỉ mục bệ toàn tháp (~330) — chỉ mục tuyến leo, không coin | B | Freebuff | `[ ]` |
 
 ## M2 — Code mechanic (chờ D3)
 
@@ -68,7 +72,8 @@ Mỗi khu 3 nhịp: **A1** khung mechanic + toán (Antigravity) → **B** bảng
 | T-204 | — | `JumpBooster` + `DronePlatform` | B | Freebuff | `[ ]` |
 | T-205 | — | `GravityZone` | A | Codex | `[ ]` |
 | T-206 | — | `EndingChoice` + mảnh lore | B | Freebuff | `[ ]` |
-| T-207 | — | `GameBalance` + `SpirePresentation` (bỏ tên Cyberpunk) | A | Codex | `[ ]` |
+| T-207 | — | `GameBalance` + `SpirePresentation` (bỏ tên Cyberpunk, bỏ SCORE khỏi HUD) | A | Codex | `[ ]` |
+| T-210 | — | **Xoá code coin**: `PlatformCoins.cs`, `PlatformCoinPickup.cs`, phần coin trong `GameSession` (Score, CoinSeed, Coins, SaveCoinProgress) và `NeonAscentChecks` | B | Freebuff | `[!]` chờ M2 |
 
 ## M3–M5 (chi tiết khi tới nơi)
 
@@ -85,4 +90,4 @@ Mỗi khu 3 nhịp: **A1** khung mechanic + toán (Antigravity) → **B** bảng
 | **Antigravity** | T-101 (khu 4 khung + toán) | `T-101/files/Docs/TheSpire-Level-Sector4.md` | sau T-003R |
 | **Freebuff** | T-009 (chuyển bảng khu 1–3 sang v2) | 3 file Sector + `report.md` | — |
 | **Codex** | T-004 (`Tools/apicheck.py`) | `T-004/files/Tools/apicheck.py` + `report.md` | — |
-| **Chủ dự án** | D2 · D3 · D4 · D6 + kết nối lại GitHub (tuỳ chọn) | trả lời trong PR #1 | — |
+| **Chủ dự án** | trả lời **D4** (nhịp cổng Unity) và **D6** (ruleset bảo vệ `main`) + kết nối lại GitHub (tuỳ chọn) | trả lời trong PR #1 | — |

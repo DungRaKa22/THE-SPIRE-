@@ -24,7 +24,7 @@ Checks performed
            consecutive STATIC platforms.  Understated dx is the dangerous direction
            (the link looks easier than it is) and is labelled RISKY.
     NUM  - platform numbers strictly increase, no duplicates
-    COIN - groups of five (PlatformCoins rule) per sector
+    COUNT- numbered platform count per sector (route order for validator/builder)
     TIGHT- the hardest links per sector by p_full
 
 Exit code 0 = no HARD and no GEOM failure.  --strict also fails on CONV/WEAK.
@@ -174,7 +174,7 @@ def parse_sector(path: Path) -> list[Row]:
 
 def check_sector(path: Path) -> dict[str, list[str]]:
     rows = parse_sector(path)
-    found: dict[str, list[str]] = {k: [] for k in ("HARD", "WINDOW", "CONV", "WEAK", "GEOM", "NUM", "COIN", "TIGHT")}
+    found: dict[str, list[str]] = {k: [] for k in ("HARD", "WINDOW", "CONV", "WEAK", "GEOM", "NUM", "COUNT", "TIGHT")}
     if not rows:
         found["HARD"].append("no platform table found")
         return found
@@ -242,10 +242,7 @@ def check_sector(path: Path) -> dict[str, list[str]]:
                 f"({direction}, from {int(prev.id):03d} {prev.name})"
             )
 
-    groups = len(rows) // 5
-    found["COIN"].append(
-        f"{len(rows)} numbered platforms -> {groups} coin groups, {len(rows) % 5} platform(s) outside a group"
-    )
+    found["COUNT"].append(f"{len(rows)} numbered platforms")
     for p_full, label in sorted(tight, reverse=True)[:5]:
         found["TIGHT"].append(f"p_full={p_full:.2f}  {label}")
     return found
@@ -258,7 +255,7 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent
-    order = ("HARD", "WINDOW", "GEOM", "WEAK", "CONV", "NUM", "TIGHT", "COIN")
+    order = ("HARD", "WINDOW", "GEOM", "WEAK", "CONV", "NUM", "TIGHT", "COUNT")
     titles = {
         "HARD": "unreachable links",
         "WINDOW": "charge windows narrower than convention v2 allows",
@@ -267,7 +264,7 @@ def main() -> int:
         "CONV": "p column documents the height-only minimum",
         "NUM": "numbering",
         "TIGHT": "hardest links",
-        "COIN": "coin groups",
+        "COUNT": "numbered platforms (route order)",
     }
     out: list[str] = []
     totals = {k: 0 for k in order}
@@ -281,7 +278,7 @@ def main() -> int:
         found = check_sector(path)
         for key in order:
             items = found[key]
-            totals[key] += len(items) if key not in ("TIGHT", "COIN") else 0
+            totals[key] += len(items) if key not in ("TIGHT", "COUNT") else 0
             if not items:
                 continue
             out.append(f"-- {key}: {titles[key]} ({len(items)})")

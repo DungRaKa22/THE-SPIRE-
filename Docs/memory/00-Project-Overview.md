@@ -33,7 +33,12 @@ Dự án chạy bằng **4 agent + chủ dự án**. Luật đầy đủ ở `Do
 3. **Nhân vật mới — The Climber** (người nhặt phế liệu + Neural Jump Drive ở chân).
 4. **Mục tiêu cuối: 1 scene duy nhất** `TheSpire.unity` (~525 m tháp, 8 khu), level dạng
    dữ liệu `SectorBlueprint`, khu cũ (NeonAscent, JumpLab…) giữ lại làm phòng thử.
-5. Thiết kế đủ 8 khu bằng tài liệu trước, rồi mới dựng scene.
+5. Thiết kế đủ 8 khu bằng tài liệu trước, rồi mới dựng scene. **Chủ dự án xác nhận lại
+   20/09/2026: chưa code gì mới cho tới khi đủ 8 khu** (sửa lỗi runtime trong code hiện có vẫn làm).
+
+6. **Cơ chế coin bị loại bỏ hoàn toàn** (chỉ là demo). Tài liệu, prompt art và công cụ đã sạch
+   coin; code cũ xoá ở ticket **T-210** trong giai đoạn code. Số bệ vẫn đánh liên tục toàn tháp vì
+   là khoá thứ tự tuyến leo cho validator/builder.
 
 ## Chỉ mục tài liệu
 

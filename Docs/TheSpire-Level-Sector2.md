@@ -336,13 +336,13 @@ không bao giờ vượt ~20 m. Phù hợp mức "2 khu" trong kế hoạch.
 
 ---
 
-## 8. Đánh số & coin
+## 8. Đánh số bệ
 
 ### Vì sao tiếp số 41–83 chứ không đánh lại từ 01
 
-`PlatformCoins.Begin` sắp xếp **toàn bộ** collider trong scene theo `int.Parse(name.Split(' ')[0])`
-rồi chia nhóm 5. Nếu mỗi khu đánh lại từ 01, các bệ trùng số ở nhiều khu sẽ bị trộn theo
-`ThenBy(center.y)` — thứ tự không xác định, coin rơi vào nhóm sai.
+Số bệ là **khoá thứ tự tuyến leo**: validator (`SpireChecks`) và builder dựng scene đọc thứ tự này
+để kiểm và mọc liên kết theo đúng đường leo. Nếu mỗi khu đánh lại từ 01, hai bệ trùng số ở hai khu
+khác nhau sẽ không phân biệt được.
 
 **Vì vậy số phải là duy nhất và tăng dần theo độ cao trên toàn tháp.** Khu 1 = 01–40,
 khu 2 = 41–83, khu 3 bắt đầu từ 84.
@@ -350,12 +350,10 @@ khu 2 = 41–83, khu 3 bắt đầu từ 84.
 | Hạng mục | Giá trị |
 |---|---|
 | Bệ khu 2 | 41–83 (43 bệ) |
-| Nhóm coin | `43 / 5 = 8` nhóm → **8 coin**; 3 bệ cuối (81–83) chưa đủ nhóm nên không sinh coin |
 | Không đánh số | `Vent Updraft`, mọi khối trang trí, tường, trần |
 
-> **Cần quyết định:** với ~40 bệ/khu × 8 khu ≈ 320 bệ, luật hiện tại sinh ~64 coin (640 điểm).
-> Đề xuất **giữ luật** nhưng coi coin là điểm tùy chọn; hoặc đổi thành 1 coin / 8 bệ từ khu 4
-> trở lên để giảm mật độ. Chưa chốt.
+> **Đã chốt 20/09/2026:** loại bỏ hoàn toàn cơ chế coin (chỉ là demo) — không nhóm 5 bệ, không
+> điểm số. Số bệ giữ nguyên vì phục vụ thứ tự tuyến leo và validator.
 
 ---
 
@@ -374,7 +372,7 @@ khu 2 = 41–83, khu 3 bắt đầu từ 84.
       vào từ dưới → ra ở đúng tầm `57`.
 - [ ] Chuỗi piston liên tiếp tối đa = **3**.
 - [ ] Mọi piston trong một chuỗi nhảy ngang có **cùng pha**.
-- [ ] 43 bệ đánh số, 8 coin, ranh giới khu = 131.0.
+- [ ] 43 bệ đánh số, ranh giới khu = 131.0.
 
 ---
 
