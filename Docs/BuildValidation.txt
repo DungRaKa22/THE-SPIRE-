@@ -1,0 +1,2 @@
+PASS: Windows x64 development build, 185295148 bytes, 00:03:18.9087232.
+PASS: standalone executable launched in a 1280x720 window and rendered Cyberpunk Rooftops with saved run state, timer, jump count, height, character animation and environment.

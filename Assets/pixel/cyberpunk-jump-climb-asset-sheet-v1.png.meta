@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 793095f2867a0ab4792d40301be8eda8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2913473111586342701
+    second: cyberpunk-jump-climb-asset-sheet-v1_0
+  - first:
+      213: 2084990170437636885
+    second: cyberpunk-jump-climb-asset-sheet-v1_1
+  - first:
+      213: 1237569866222931446
+    second: cyberpunk-jump-climb-asset-sheet-v1_2
+  - first:
+      213: 2499056162096430641
+    second: cyberpunk-jump-climb-asset-sheet-v1_3
+  - first:
+      213: -7262168821580187808
+    second: cyberpunk-jump-climb-asset-sheet-v1_4
+  - first:
+      213: 8866632689340366571
+    second: cyberpunk-jump-climb-asset-sheet-v1_5
+  - first:
+      213: 8864439159716515464
+    second: cyberpunk-jump-climb-asset-sheet-v1_6
+  - first:
+      213: -990481497823051726
+    second: cyberpunk-jump-climb-asset-sheet-v1_7
+  - first:
+      213: -2503914352958459733
+    second: cyberpunk-jump-climb-asset-sheet-v1_8
+  - first:
+      213: -6773720171792135870
+    second: cyberpunk-jump-climb-asset-sheet-v1_9
+  - first:
+      213: -3458924720652300203
+    second: cyberpunk-jump-climb-asset-sheet-v1_10
+  - first:
+      213: -5320355478949919279
+    second: cyberpunk-jump-climb-asset-sheet-v1_11
+  - first:
+      213: 6367676710646883856
+    second: cyberpunk-jump-climb-asset-sheet-v1_12
+  - first:
+      213: -6837142334988492116
+    second: cyberpunk-jump-climb-asset-sheet-v1_13
+  - first:
+      213: -1060629913322986777
+    second: cyberpunk-jump-climb-asset-sheet-v1_14
+  - first:
+      213: -8480816174879324782
+    second: cyberpunk-jump-climb-asset-sheet-v1_15
+  - first:
+      213: 2773450668111710053
+    second: cyberpunk-jump-climb-asset-sheet-v1_16
+  - first:
+      213: 2119445528682516689
+    second: cyberpunk-jump-climb-asset-sheet-v1_17
+  - first:
+      213: -5696622683620957087
+    second: cyberpunk-jump-climb-asset-sheet-v1_18
+  - first:
+      213: 8555212038971687282
+    second: cyberpunk-jump-climb-asset-sheet-v1_19
+  - first:
+      213: -2078810663556087842
+    second: cyberpunk-jump-climb-asset-sheet-v1_20
+  - first:
+      213: 2332347328878597425
+    second: cyberpunk-jump-climb-asset-sheet-v1_21
+  - first:
+      213: -6455593923547713745
+    second: cyberpunk-jump-climb-asset-sheet-v1_22
+  - first:
+      213: 3339346735355590247
+    second: cyberpunk-jump-climb-asset-sheet-v1_23
+  - first:
+      213: 4696043780159830661
+    second: cyberpunk-jump-climb-asset-sheet-v1_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 479
+        width: 256
+        height: 513
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2781c6db5cbe6820800000000000000
+      internalID: 2913473111586342701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 865
+        width: 209
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513dd15638f5fec10800000000000000
+      internalID: 2084990170437636885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 961
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd02f48c3bbc2110800000000000000
+      internalID: 1237569866222931446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_3
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 594
+        width: 320
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e328fb65e6ea220800000000000000
+      internalID: 2499056162096430641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_4
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 543
+        width: 301
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067bbc2fee7973b90800000000000000
+      internalID: -7262168821580187808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_5
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 557
+        width: 252
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: beebff9147b9c0b70800000000000000
+      internalID: 8866632689340366571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_6
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 561
+        width: 326
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e07ff2370d40b70800000000000000
+      internalID: 8864439159716515464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_7
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 607
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23009a5535a1142f0800000000000000
+      internalID: -990481497823051726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_8
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 519
+        width: 47
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba0b8eb892f404dd0800000000000000
+      internalID: -2503914352958459733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_9
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 447
+        width: 171
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2498e687469eef1a0800000000000000
+      internalID: -6773720171792135870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_10
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 577
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 550d3b0fa4e6fffc0800000000000000
+      internalID: -3458924720652300203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_11
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 569
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d5036e51ec4a26b0800000000000000
+      internalID: -5320355478949919279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_12
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 45
+        width: 161
+        height: 499
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 016a2ae1b388e5850800000000000000
+      internalID: 6367676710646883856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_13
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 527
+        width: 77
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2e93465479d11a0800000000000000
+      internalID: -6837142334988492116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_14
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 30
+        width: 238
+        height: 516
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e2ea3a96b2e741f0800000000000000
+      internalID: -1060629913322986777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 515
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2954eea4f961e4a80800000000000000
+      internalID: -8480816174879324782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_16
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 447
+        width: 73
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5674ed230b64d7620800000000000000
+      internalID: 2773450668111710053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_17
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 0
+        width: 265
+        height: 515
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d059e1aa78c96d10800000000000000
+      internalID: 2119445528682516689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_18
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 18
+        width: 330
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164275be9d781f0b0800000000000000
+      internalID: -5696622683620957087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_19
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 23
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2718d01a5083ab670800000000000000
+      internalID: 8555212038971687282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_20
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 79
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edff17b27b49623e0800000000000000
+      internalID: -2078810663556087842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_21
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 55
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 135d3aec9892e5020800000000000000
+      internalID: 2332347328878597425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_22
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 31
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2fa4cc978f1966a0800000000000000
+      internalID: -6455593923547713745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_23
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 15
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766fab6c92eb75e20800000000000000
+      internalID: 3339346735355590247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cyberpunk-jump-climb-asset-sheet-v1_24
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 21
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58afb16ffe2bb2140800000000000000
+      internalID: 4696043780159830661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cyberpunk-jump-climb-asset-sheet-v1_0: 2913473111586342701
+      cyberpunk-jump-climb-asset-sheet-v1_1: 2084990170437636885
+      cyberpunk-jump-climb-asset-sheet-v1_10: -3458924720652300203
+      cyberpunk-jump-climb-asset-sheet-v1_11: -5320355478949919279
+      cyberpunk-jump-climb-asset-sheet-v1_12: 6367676710646883856
+      cyberpunk-jump-climb-asset-sheet-v1_13: -6837142334988492116
+      cyberpunk-jump-climb-asset-sheet-v1_14: -1060629913322986777
+      cyberpunk-jump-climb-asset-sheet-v1_15: -8480816174879324782
+      cyberpunk-jump-climb-asset-sheet-v1_16: 2773450668111710053
+      cyberpunk-jump-climb-asset-sheet-v1_17: 2119445528682516689
+      cyberpunk-jump-climb-asset-sheet-v1_18: -5696622683620957087
+      cyberpunk-jump-climb-asset-sheet-v1_19: 8555212038971687282
+      cyberpunk-jump-climb-asset-sheet-v1_2: 1237569866222931446
+      cyberpunk-jump-climb-asset-sheet-v1_20: -2078810663556087842
+      cyberpunk-jump-climb-asset-sheet-v1_21: 2332347328878597425
+      cyberpunk-jump-climb-asset-sheet-v1_22: -6455593923547713745
+      cyberpunk-jump-climb-asset-sheet-v1_23: 3339346735355590247
+      cyberpunk-jump-climb-asset-sheet-v1_24: 4696043780159830661
+      cyberpunk-jump-climb-asset-sheet-v1_3: 2499056162096430641
+      cyberpunk-jump-climb-asset-sheet-v1_4: -7262168821580187808
+      cyberpunk-jump-climb-asset-sheet-v1_5: 8866632689340366571
+      cyberpunk-jump-climb-asset-sheet-v1_6: 8864439159716515464
+      cyberpunk-jump-climb-asset-sheet-v1_7: -990481497823051726
+      cyberpunk-jump-climb-asset-sheet-v1_8: -2503914352958459733
+      cyberpunk-jump-climb-asset-sheet-v1_9: -6773720171792135870
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
