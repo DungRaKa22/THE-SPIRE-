@@ -3,6 +3,13 @@
 ## Đã xong
 
 ### Vận hành nhóm (mới 20/09/2026)
+- ✅ **Sổ tay vận hành `Docs/team/06-WORKFLOW.md`** — 4 nơi chứa file (GitHub / máy Unity / sàn
+  Arena / máy agent), hai nhánh, luồng A (tài liệu, không cần Unity) và luồng B (code, cổng Unity
+  theo lô), quy tắc `.meta`, bảng lệnh theo vai, xử lý sự cố, kế hoạch một tuần, checklist dán tường.
+- ✅ `Tools/inbox.py` — ghép bài nộp của agent: dry-run mặc định, chặn `Assets/Scenes/**`,
+  `ProjectSettings/**`, file ngoài phạm vi; tự sinh `.meta` cho `.cs` mới; tự chạy `jumpcheck.py`.
+- ✅ **Repo đang PUBLIC** (agent clone đọc không cần token) và **Arena merge được PR** (kiểm chứng
+  bằng lỗi "still a draft" chứ không phải 403).
 - ✅ `Docs/team/` — hiến chương 4 agent, ma trận sở hữu file, pipeline 6 bước, DoR/DoD,
   định tuyến model theo tầng A/B, quy trình cổng Unity gom lô, prompt khởi động cho 3 agent.
 - ✅ **Bảng công việc = GitHub Issues** (8 issue: #2 T-003, #3 T-003R, #4 T-009, #5 T-004,
