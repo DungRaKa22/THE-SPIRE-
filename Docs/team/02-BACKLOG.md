@@ -15,7 +15,7 @@ Cổng: `jc` = `Tools/jumpcheck.py` · `ac` = `Tools/apicheck.py` (chưa có, T-
 | T-004 | `[ ]` Cổng API: index symbol C# trong `Assets/**`, chặn tham chiếu hàm không tồn tại | B | Freebuff | `Tools/apicheck.py` | tự chạy trên repo hiện tại |
 | T-005 | `[ ]` Issue template + label + board GitHub | — | Arena | `.github/`, labels | - |
 | T-006 | `[ ]` Dọn repo: bỏ 5 file âm thanh trùng `Assets/Audio` ↔ `Assets/Resources`, untrack `Assets/_Recovery` | B | Freebuff | `.gitignore`, xoá trùng | u (Unity mở sạch) |
-| T-007 | `[x]` Sửa 4 lỗi hình học bảng khu 1 (011, 012 RISKY; 021, 026) | B | Freebuff | `Docs/TheSpire-Level-Sector1.md` | jc GEOM=0 |
+| T-007 | `[ ]` Sửa 4 lỗi hình học bảng khu 1 (011, 012 RISKY; 021, 026) | B | Freebuff | `Docs/TheSpire-Level-Sector1.md` | jc GEOM=0 |
 | T-008 | `[ ]` Chốt 7 quyết định mở (xem PR mô tả) | — | Bạn + Arena | ghi vào `Docs/memory/00` | - |
 
 > T-003 là ticket quan trọng nhất của M0: hiện 19 dòng ở khu 2 ghi `p` theo **độ cao** trong khi
