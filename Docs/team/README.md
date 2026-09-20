@@ -15,15 +15,18 @@
 | 4 | `Docs/team/00-CHARTER.md` | Vai trò, quyền sửa file của từng agent |
 | 5 | `Docs/team/01-PIPELINE.md` | Vòng đời một ticket, DoR/DoD, luật PR |
 
-## Một ticket đi qua 6 bước
+## Một ticket đi qua 8 bước
 
 ```
-SPEC (Tier A)  →  TICKET  →  IMPLEMENT (owner)  →  GATE (script)  →  REVIEW (Arena)  →  UNITY GATE (bạn)  →  MERGE
-   Antigravity      Arena        Codex/Freebuff      jumpcheck.py        PR review        mở Unity 1 lần/tuần
+SPEC (Tier A) → ISSUE (ticket) → IMPLEMENT (owner) → DELIVER (~/inbox) → INTEGRATE (Arena)
+   → REVIEW đối kháng (Antigravity) → UNITY GATE (bạn) → MERGE
 ```
 
-Bước nào tốn token nhất thì bước đó phải có script kiểm trước. Bước 4 chạy **miễn phí** và đã
-chứng minh giá trị: nó tìm ra 30 vấn đề trong tài liệu khu 1–3 mà không dùng token nào (xem
+Chốt với chủ dự án 20/09/2026: **GitHub Issues là bảng công việc duy nhất**, **chỉ Arena push**,
+**chất lượng trước** (mọi PR code có review đối kháng), **M0 + M1 chạy song song**.
+
+Bước nào tốn token nhất thì bước đó phải có script kiểm trước. Bước cổng script chạy **miễn phí**
+và đã chứng minh giá trị: nó tìm ra 30 vấn đề trong tài liệu khu 1–3 mà không dùng token nào (xem
 `Docs/TheSpireJumpCheck.txt`).
 
 ## Chỉ mục

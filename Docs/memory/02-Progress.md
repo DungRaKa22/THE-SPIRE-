@@ -5,6 +5,13 @@
 ### Vận hành nhóm (mới 20/09/2026)
 - ✅ `Docs/team/` — hiến chương 4 agent, ma trận sở hữu file, pipeline 6 bước, DoR/DoD,
   định tuyến model theo tầng A/B, quy trình cổng Unity gom lô, prompt khởi động cho 3 agent.
+- ✅ **Bảng công việc = GitHub Issues** (8 issue: #2 T-003, #3 T-003R, #4 T-009, #5 T-004,
+  #6 T-101, #7 T-102, #8 T-006, #9 T-201). **Hạn chế quyền đã đo:** Arena push + tạo issue +
+  tạo/sửa PR + review PR được; **không** comment/đóng/gắn nhãn issue (403) ⇒ trạng thái sống ghi ở
+  `Docs/team/02-BACKLOG.md`, chủ dự án đóng issue. Muốn tự động hoá hoàn toàn thì kết nối lại GitHub.
+- ✅ **Quy ước bảng bệ v2 (T-003)** — chốt trong `Docs/memory/01-Architecture.md`: cột `p` cũ đổi
+  thành `p_min` (mức tối thiểu đủ **cả** độ cao và tầm xa), thêm `p_max` (giới hạn trần/che khuất),
+  luật "liên kết căng" khi `p_max − p_min < 0.10`, kèm 2 ví dụ tính tay khớp công cụ.
 - ✅ `Tools/jumpcheck.py` — cổng kiểm ngân sách nhảy chạy bằng Python (0 token), ghi
   `Docs/TheSpireJumpCheck.txt`. Chạy lần đầu trên khu 1–3 (125 bệ) đã phát hiện:
   **HARD=0** (không có liên kết nào bất khả thi — tin tốt), **GEOM=4** lỗi hình học bảng ở khu 1

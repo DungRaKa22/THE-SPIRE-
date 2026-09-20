@@ -17,8 +17,8 @@
 
 | Thành viên | Tầng | Sở trường giao | Không giao |
 |---|---|---|---|
-| **Arena** (trưởng nhóm & tích hợp) | — | Spec, ticket, board, review + merge PR, xử lý conflict, `Docs/memory/**`, `Tools/**`, `.github/**`, sinh scene từ dữ liệu | Không viết thay mechanic phức tạp |
-| **Antigravity** (Gemini 3.x) | A — suy luận | Toán mechanic, bảng cửa sổ thời gian §1.5b, kiến trúc, truy lỗi "im lặng", review đối kháng trước khi merge | Điền bảng 40 dòng, doc formatting |
+| **Arena** (trưởng nhóm & tích hợp) | — | Spec, issue/ticket, **người DUY NHẤT được push**, ghép bài từ inbox, chạy cổng, xử lý conflict, `Docs/memory/**`, `Tools/**`, `.github/**`, sinh scene từ dữ liệu | Không viết thay mechanic phức tạp |
+| **Antigravity** (Gemini 3.x) | A — suy luận | Toán mechanic, bảng cửa sổ thời gian §1.5b, kiến trúc, truy lỗi "im lặng", **review đối kháng mọi PR code** | Điền bảng 40 dòng, doc formatting |
 | **Codex** (GPT-6-class) | A — triển khai | Component runtime C# + editor tooling theo spec, diff nhỏ, menu check | Viết tài liệu thiết kế màn, sửa scene bằng tay |
 | **Freebuff** (DeepSeek) | B — khối lượng | Điền bảng bệ theo spec, đồng bộ doc, danh sách prefab, refactor lặp, dịch/format | Quyết định mechanic, code vật lý chưa có test |
 | **Bạn** (chủ dự án) | — | **Cổng Unity duy nhất**, duyệt ticket quyết định, chốt hướng | Không phải sửa lỗi đánh máy trong doc |
@@ -51,7 +51,19 @@ thì không ai phát hiện được thì giao tầng A.**
 - **Hỏi khi mơ hồ, nhưng hỏi một lần:** gom câu hỏi vào issue, không hỏi từng câu.
 - **Không tự đổi phạm vi:** phát hiện việc ngoài ticket ⇒ mở issue mới, đừng làm luôn.
 
-## 5. Leo thang & dừng
+## 5. Ai push, ai không
+
+**Chỉ Arena push được** (nhánh `arena/01a0bf86-the-spire`). Ba agent ngoài **không commit, không
+tạo nhánh, không push** — các em nộp thư mục `T-0xx/` gồm file hoàn chỉnh + `report.md`, chủ dự án
+đưa vào `~/inbox/T-0xx/`, Arena ghép vào repo và mở PR. Chi tiết định dạng: `01-PIPELINE.md` §1.
+
+Hệ quả cần nhớ: agent **không tự giải quyết conflict được** ⇒ luật "một agent / một file / một
+lượt" ở §3 là bắt buộc, không phải khuyến nghị. Ticket đụng cùng file phải **xếp hàng**.
+
+Antigravity review đối kháng **không cần quyền push** — chỉ cần đọc PR trên GitHub và comment
+vào đó; Arena đọc bằng `gh pr view <n> --comments`.
+
+## 6. Leo thang & dừng
 
 | Tình huống | Luật |
 |---|---|

@@ -1,6 +1,6 @@
 THE SPIRE - deterministic jump-budget gate (Tools/jumpcheck.py)
 constants: g_eff=29.43, v=lerp(4,13,p), horiz=6*lerp(0.4,1,p), margins dy<=0.92H, dx<=0.85D
-findings: HARD=0 GEOM=4 WEAK=7 CONV=19 NUM=0
+findings: HARD=0 WINDOW=0 GEOM=4 WEAK=7 CONV=19 NUM=0
 FAIL: 0 unreachable link(s), 4 geometry mismatch(es).
 
 === TheSpire-Level-Sector1.md ===

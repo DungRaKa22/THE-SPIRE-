@@ -1,87 +1,88 @@
-# 02 — Backlog & lộ trình
+# 02 — Backlog & lộ trình (bảng trạng thái sống)
 
-Trạng thái: `[ ]` chưa làm · `[~]` đang làm · `[x]` xong (đã qua cổng).
-Tầng: **A** = cần suy luận, giao Antigravity/Codex · **B** = khối lượng, giao Freebuff.
-Cổng: `jc` = `Tools/jumpcheck.py` · `ac` = `Tools/apicheck.py` (chưa có, T-004) ·
-`u` = cổng Unity của bạn · `-` = review mắt thường.
+> **Đây là nguồn chân lý về trạng thái.** Issue trên GitHub là *yêu cầu gốc, bất biến* — Arena
+> không sửa/đóng/gắn nhãn được (xem `01-PIPELINE.md` §2), nên tầng/owner/trạng thái ghi ở đây.
+> Chủ dự án đóng issue khi ticket xong.
 
-## M0 — Team OS & cổng kiểm (làm ngay)
+Trạng thái: `[ ]` chưa làm · `[~]` đang làm · `[x]` xong (đã qua cổng) · `[!]` đang bị chặn.
+Tầng: **A** = cần suy luận (Antigravity/Codex) · **B** = khối lượng có script kiểm (Freebuff).
+Cổng: `jc` = `Tools/jumpcheck.py` · `ac` = `Tools/apicheck.py` · `u` = cổng Unity của chủ dự án.
 
-| ID | Việc | Tầng | Chủ | Deliverable | Cổng |
+## Quyết định của chủ dự án (20/09/2026)
+
+| # | Quyết định | Chọn |
+|---|---|---|
+| Q1 | Kênh điều phối | **GitHub Issues + PR** |
+| Q2 | Quyền push | **Chỉ Arena push** — 3 agent nộp bài qua `~/inbox/T-0xx/` |
+| Q3 | Ưu tiên | **Chất lượng trước** — mọi PR code có review đối kháng của Antigravity |
+| Q4 | Khởi động | **M0 + M1 song song**, nhưng chốt quy ước bảng trước khi ai điền số |
+
+## Việc còn phải chốt (D1–D7)
+
+| # | Câu hỏi | Đề xuất của Arena |
+|---|---|---|
+| D1 | Cột `p`: sửa số theo mức tối thiểu đầy đủ, hay đổi nghĩa cột? | Đã chốt trong T-003: đổi thành `p_min` đầy đủ + thêm `p_max` |
+| D2 | Luật coin khi ~330 bệ: 1/5 hay 1/8? | Giữ 1/5 cho khu 1–3, thử 1/8 từ khu 4 (đo bằng số coin/khu) |
+| D3 | Bật M2 (code mechanic) ngay? | Nên bật T-201 sớm để chứng minh bản sửa `Grounded` chạy thật |
+| D4 | Nhịp cổng Unity | Cửa sổ cố định mỗi tuần + mỗi khi có ≥ 3 PR xếp hàng |
+| D5 | Mỗi agent có PAT riêng? | Không — theo Q2 |
+| D6 | Ruleset chặn push thẳng vào `main`? | Nên bật (chủ dự án làm, Arena không có quyền) |
+| D7 | Dùng Issues làm board chính thức? | Đã chốt — kèm hạn chế quyền ở `01-PIPELINE.md` §2 |
+
+## M0 — Team OS & cổng kiểm
+
+| Ticket | Issue | Việc | Tầng | Chủ | Trạng thái |
 |---|---|---|---|---|---|
-| T-001 | `[x]` Bộ luật nhóm + pipeline + backlog | — | Arena | `Docs/team/**` | - |
-| T-002 | `[x]` Cổng kiểm ngân sách nhảy | — | Arena | `Tools/jumpcheck.py`, `Docs/TheSpireJumpCheck.txt` | jc |
-| T-003 | `[ ]` Chuẩn hoá **quy ước bảng bệ v2**: cột `p_min` (đủ cả 2 điều kiện) + cột `p_trần` (giới hạn trần/che khuất) | A | Antigravity | mục mới trong `Docs/memory/01-Architecture.md` §quy cách bảng | jc --strict |
-| T-004 | `[ ]` Cổng API: index symbol C# trong `Assets/**`, chặn tham chiếu hàm không tồn tại | B | Freebuff | `Tools/apicheck.py` | tự chạy trên repo hiện tại |
-| T-005 | `[ ]` Issue template + label + board GitHub | — | Arena | `.github/`, labels | - |
-| T-006 | `[ ]` Dọn repo: bỏ 5 file âm thanh trùng `Assets/Audio` ↔ `Assets/Resources`, untrack `Assets/_Recovery` | B | Freebuff | `.gitignore`, xoá trùng | u (Unity mở sạch) |
-| T-007 | `[ ]` Sửa 4 lỗi hình học bảng khu 1 (011, 012 RISKY; 021, 026) | B | Freebuff | `Docs/TheSpire-Level-Sector1.md` | jc GEOM=0 |
-| T-008 | `[ ]` Chốt 7 quyết định mở (xem PR mô tả) | — | Bạn + Arena | ghi vào `Docs/memory/00` | - |
+| T-001 | — | Bộ luật nhóm | — | Arena | `[x]` PR #1 |
+| T-002 | — | `Tools/jumpcheck.py` + báo cáo | — | Arena | `[x]` PR #1 |
+| T-003 | [#2](https://github.com/DungRaKa22/THE-SPIRE-/issues/2) | **Quy ước bảng bệ v2** (`p_min`, `p_max`, luật liên kết căng) | A | Arena | `[x]` PR #1 |
+| T-003R | [#3](https://github.com/DungRaKa22/THE-SPIRE-/issues/3) | Review đối kháng quy ước v2 + công cụ | A | Antigravity | `[ ]` |
+| T-009 | [#4](https://github.com/DungRaKa22/THE-SPIRE-/issues/4) | Chuyển bảng khu 1–3 sang v2 + sửa 4 lỗi hình học | B | Freebuff | `[ ]` |
+| T-004 | [#5](https://github.com/DungRaKa22/THE-SPIRE-/issues/5) | `Tools/apicheck.py` | B | Codex | `[ ]` |
+| T-006 | [#8](https://github.com/DungRaKa22/THE-SPIRE-/issues/8) | Dọn repo (âm thanh trùng, `_Recovery`) | B | Freebuff | `[ ]` |
+| T-005 | — | Issue template + nhãn + board | — | Arena | `[~]` (thiếu quyền gắn nhãn) |
 
-> T-003 là ticket quan trọng nhất của M0: hiện 19 dòng ở khu 2 ghi `p` theo **độ cao** trong khi
-> tài liệu tuyên bố `p` là "mức tối thiểu cần". Nếu không chốt quy ước trước, mỗi agent sẽ điền
-> bảng khu 4–8 theo một kiểu khác nhau và validator sẽ nổ hàng loạt.
+## M1 — Hoàn tất thiết kế 8 khu
 
-## M1 — Hoàn tất thiết kế 8 khu (đúng quyết định "tài liệu trước, code sau")
+Mỗi khu 3 nhịp: **A1** khung mechanic + toán (Antigravity) → **B** bảng 40–45 bệ (Freebuff) →
+**A2** soát số liệu + Arena chạy `jc`. Một agent / một file / một lượt — ticket cùng file xếp hàng.
 
-Mỗi khu 3 bước, **không song song hai agent trên cùng một file**:
-`A1` khung mechanic + toán (Antigravity) → `B` điền bảng 40–45 bệ (Freebuff) → `A2` soát + Arena chạy jc.
+| Ticket | Issue | Việc | Tầng | Chủ | Trạng thái |
+|---|---|---|---|---|---|
+| T-101 | [#6](https://github.com/DungRaKa22/THE-SPIRE-/issues/6) | Khu 4 Machine Age — khung + toán băng chuyền | A1 | Antigravity | `[ ]` ← **bắt đầu ngay** |
+| T-102 | [#7](https://github.com/DungRaKa22/THE-SPIRE-/issues/7) | Khu 4 Machine Age — bảng bệ | B | Freebuff | `[!]` chờ T-101 + T-009 |
+| T-103 | — | Khu 5 Digital Revolution — khung + bảng | A1/B | Antigravity → Freebuff | `[ ]` xếp sau T-101 |
+| T-104 | — | Khu 6 Neon Megacity (cao trào, booster + drone) | A1/B | Antigravity → Freebuff | `[ ]` |
+| T-105 | — | Khu 7 The Singularity (vùng trọng lực) | A1/B | Antigravity → Freebuff | `[ ]` |
+| T-106 | — | Khu 8 The Sky + 2 ending | A/B | Antigravity → Freebuff | `[ ]` |
+| T-107 | — | Bảng tra "cửa sổ hành động" hợp nhất khu 2–8 (§1.5b) | A | Antigravity | `[ ]` |
+| T-108 | — | Gộp chỉ mục bệ toàn tháp (~330) + chốt luật coin (D2) | B | Freebuff | `[ ]` |
 
-| ID | Việc | Tầng | Chủ | Cổng |
-|---|---|---|---|---|
-| T-101 | `[ ]` Khu 4 Machine Age — băng chuyền ("kiểm soát vị trí tích lực") | A1 A2 / B | Antigravity / Freebuff | jc + bảng §1.5b |
-| T-102 | `[ ]` Khu 5 Digital Revolution — bệ bật/tắt theo mẫu | A1 A2 / B | Antigravity / Freebuff | jc + bảng §1.5b |
-| T-103 | `[ ]` Khu 6 Neon Megacity — booster + drone (cao trào 105 m) | A1 A2 / B | Antigravity / Freebuff | jc + bảng §1.5b |
-| T-104 | `[ ]` Khu 7 The Singularity — vùng trọng lực (đổi trục độ khó) | A1 A2 / B | Antigravity / Freebuff | jc + bảng §1.5b |
-| T-105 | `[ ]` Khu 8 The Sky — đoạn leo ngắn + 2 ending | A / B | Antigravity / Freebuff | jc |
-| T-106 | `[ ]` Bảng tra "cửa sổ hành động" hợp nhất khu 2–8 (§1.5b bắt buộc) | A | Antigravity | - |
-| T-107 | `[ ]` Gộp chỉ mục bệ toàn tháp (~330 bệ) + chốt luật coin | B | Freebuff | jc COIN |
-| T-108 | `[ ]` Cập nhật `Docs/memory/01,02` sau mỗi khu | — | Arena | - |
+## M2 — Code mechanic (chờ D3)
 
-## M2 — Code mechanic (⛔ chỉ bắt đầu khi bạn bật đèn xanh)
+| Ticket | Issue | Việc | Tầng | Chủ | Trạng thái |
+|---|---|---|---|---|---|
+| T-201 | [#9](https://github.com/DungRaKa22/THE-SPIRE-/issues/9) | `MovingPiston` + menu check | A | Codex | `[!]` chờ D3 + T-004 |
+| T-202 | — | `ConveyorBelt` | A | Codex | `[ ]` |
+| T-203 | — | `TogglePlatform` | B | Freebuff | `[ ]` |
+| T-204 | — | `JumpBooster` + `DronePlatform` | B | Freebuff | `[ ]` |
+| T-205 | — | `GravityZone` | A | Codex | `[ ]` |
+| T-206 | — | `EndingChoice` + mảnh lore | B | Freebuff | `[ ]` |
+| T-207 | — | `GameBalance` + `SpirePresentation` (bỏ tên Cyberpunk) | A | Codex | `[ ]` |
 
-| ID | Việc | Tầng | Chủ | Cổng |
-|---|---|---|---|---|
-| T-201 | `[ ]` `MovingPiston` (kinematic + `MovePosition`, profile thang, `IMovingSurface`) | A | Codex | menu check mới + u |
-| T-202 | `[ ]` `ConveyorBelt` (đổi điểm xuất phát tích lực, không đổi đường cong) | A | Codex | u |
-| T-203 | `[ ]` `TogglePlatform` (viền đứt nét + chỗ quan sát an toàn) | B | Freebuff | u |
-| T-204 | `[ ]` `JumpBooster` + `DronePlatform` | B | Freebuff | u |
-| T-205 | `[ ]` `GravityZone` (chỉ giảm, có biên nhìn thấy) | A | Codex | u |
-| T-206 | `[ ]` `EndingChoice` + mảnh lore | B | Freebuff | u |
-| T-207 | `[ ]` `GameBalance` (khoá hằng số thành một chỗ) + `SpirePresentation` (thay `CyberpunkPresentation`) | A | Codex | u |
-| T-208 | `[ ]` `EndingChoice`, checkpoint theo khu, kỷ lục theo khu | B | Freebuff | u |
+## M3–M5 (chi tiết khi tới nơi)
 
-## M3 — Dữ liệu & dựng scene (một người viết)
+- **M3:** `SectorBlueprint` (T-301) → `TheSpireBuilder` (T-302) → `SpireChecks` (T-303) →
+  dựng `TheSpire.unity` + `SectorStreamer` (T-304, Arena).
+- **M4:** chạy `SpireChecks` toàn tháp, 60 FPS, lưu/tiếp tục slot `Spire.v1`, playtest đầu–cuối.
+- **M5:** import art (PPU 100, pivot chân), prop 8 khu, parallax, ambience + NPC + lore, build cuối.
 
-| ID | Việc | Tầng | Chủ | Cổng |
-|---|---|---|---|---|
-| T-301 | `[ ]` `SectorBlueprint` (ScriptableObject) theo §2.3 kế hoạch | A | Codex | ac |
-| T-302 | `[ ]` `TheSpireBuilder` dựng từ blueprint, chạy lại được | A | Codex | u |
-| T-303 | `[ ]` `SpireChecks` mở rộng từ `NeonAscentChecks`: mọi liên kết + ảnh cao trào mỗi khu | A | Codex | chạy batch |
-| T-304 | `[ ]` Dựng `TheSpire.unity` + `SectorStreamer` + parallax | A | **Arena** | u |
+## Lượt giao việc hiện tại (Arena giao 20/09/2026)
 
-## M4 — Kiểm chứng & tích hợp
-
-| ID | Việc | Tầng | Chủ | Cổng |
-|---|---|---|---|---|
-| T-401 | `[ ]` Chạy `SpireChecks` toàn tháp, 100% liên kết tới được | A | Codex | batch |
-| T-402 | `[ ]` 60 FPS, LOD collider, pooling coin/hạt | A | Codex | u |
-| T-403 | `[ ]` Lưu/tiếp tục slot `Spire.v1`, 2 ending, ảnh chụp từng khu | B | Freebuff | u |
-| T-404 | `[ ]` Playtest đầu–cuối, cân lại độ dài cú rơi | A | Antigravity | bạn |
-
-## M5 — Art & âm thanh
-
-| ID | Việc | Tầng | Chủ | Cổng |
-|---|---|---|---|---|
-| T-501 | `[ ]` Import `ClimberAtlas` (cắt 4×4, pivot chân, PPU 100), dựng Animator | B | Freebuff | u |
-| T-502 | `[ ]` Prop 8 khu + kiểm baseline từng frame | B | Freebuff | u |
-| T-503 | `[ ]` Nền parallax theo khu + đổi palette theo độ cao | B | Freebuff | u |
-| T-504 | `[ ]` Ambience + nhạc theo khu, NPC, mảnh lore | B | Freebuff | u |
-| T-505 | `[ ]` Build Windows cuối + playtest | A | Arena | bạn |
-
-## Việc đang chờ quyết định của bạn (không ai được tự chốt)
-
-1. `p` trong bảng bệ: sửa số cho khớp "mức tối thiểu đầy đủ", hay đổi nghĩa cột thành "mức theo độ cao"?
-2. Luật coin khi có ~330 bệ: giữ 1 coin/5 bệ (~66 coin) hay 1 coin/8 bệ từ khu 4?
-3. Có bật M2 (code mechanic) ngay hay giữ đúng "thiết kế xong 8 khu mới code"?
-4. Cổng Unity mỗi tuần một lần, hay mỗi khi có ≥ 3 PR xếp hàng?
+| Agent | Ticket | Nộp gì | Chặn bởi |
+|---|---|---|---|
+| **Antigravity** | T-003R (review quy ước + công cụ) | `T-003R/report.md` | — |
+| **Antigravity** | T-101 (khu 4 khung + toán) | `T-101/files/Docs/TheSpire-Level-Sector4.md` | sau T-003R |
+| **Freebuff** | T-009 (chuyển bảng khu 1–3 sang v2) | 3 file Sector + `report.md` | — |
+| **Codex** | T-004 (`Tools/apicheck.py`) | `T-004/files/Tools/apicheck.py` + `report.md` | — |
+| **Chủ dự án** | D2 · D3 · D4 · D6 + kết nối lại GitHub (tuỳ chọn) | trả lời trong PR #1 | — |

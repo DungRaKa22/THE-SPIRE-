@@ -13,6 +13,8 @@ documented link with the constants locked in Docs/memory/01-Architecture.md:
     legal    : dy <= 0.92 H(p)  AND  dx <= 0.85 D(dy, p)
 
 Checks performed
+    HARD   - no charge level makes the link reachable at all, or p_max < p_min
+    WINDOW - convention v2: the legal charge range [p_min, p_max] is narrower than 0.10
     HARD - no charge level makes the link reachable at all
     CONV - documented p equals the HEIGHT-ONLY minimum instead of the real one.
            Sector 1 and 2 tables are written that way today, so this is reported as a
@@ -48,6 +50,7 @@ TOL_HEIGHT_ONLY = 0.011  # rounding slack when p documents the height-only minim
 TOL_GEOM_DY = 0.02
 TOL_GEOM_DX = 0.05
 TIGHT = 0.75             # p_full at or above this counts as a hard link
+WINDOW_MIN = 0.10        # convention v2: p_max - p_min narrower than this is a tight link
 
 SECTOR_FILES = [
     "Docs/TheSpire-Level-Sector1.md",
@@ -123,7 +126,9 @@ class Row:
         self.y_hi = number(cell("y_hi"))
         self.dy = number(cell("Δy"))
         self.dx = number(cell("Δx"))
-        self.p = number(cell("p"))
+        # Convention v2 renames `p` to `p_min` and adds the optional ceiling `p_max`.
+        self.p = number(cell("p_min")) if number(cell("p_min")) is not None else number(cell("p"))
+        self.p_max = number(cell("p_max"))
 
     @property
     def standing_y(self) -> float | None:
@@ -169,7 +174,7 @@ def parse_sector(path: Path) -> list[Row]:
 
 def check_sector(path: Path) -> dict[str, list[str]]:
     rows = parse_sector(path)
-    found: dict[str, list[str]] = {k: [] for k in ("HARD", "CONV", "WEAK", "GEOM", "NUM", "COIN", "TIGHT")}
+    found: dict[str, list[str]] = {k: [] for k in ("HARD", "WINDOW", "CONV", "WEAK", "GEOM", "NUM", "COIN", "TIGHT")}
     if not rows:
         found["HARD"].append("no platform table found")
         return found
@@ -253,9 +258,10 @@ def main() -> int:
     args = parser.parse_args()
 
     root = Path(__file__).resolve().parent.parent
-    order = ("HARD", "GEOM", "WEAK", "CONV", "NUM", "TIGHT", "COIN")
+    order = ("HARD", "WINDOW", "GEOM", "WEAK", "CONV", "NUM", "TIGHT", "COIN")
     titles = {
         "HARD": "unreachable links",
+        "WINDOW": "charge windows narrower than convention v2 allows",
         "GEOM": "table geometry mismatches",
         "WEAK": "p column matches no minimum",
         "CONV": "p column documents the height-only minimum",
@@ -292,8 +298,8 @@ def main() -> int:
         "THE SPIRE - deterministic jump-budget gate (Tools/jumpcheck.py)",
         f"constants: g_eff={GRAVITY:.2f}, v=lerp({V_MIN:g},{V_MAX:g},p), horiz={HORIZ_SPEED:g}*lerp(0.4,1,p), "
         f"margins dy<={DY_MARGIN}H, dx<={DX_MARGIN}D",
-        f"findings: HARD={totals['HARD']} GEOM={totals['GEOM']} WEAK={totals['WEAK']} "
-        f"CONV={totals['CONV']} NUM={totals['NUM']}",
+        f"findings: HARD={totals['HARD']} WINDOW={totals['WINDOW']} GEOM={totals['GEOM']} "
+        f"WEAK={totals['WEAK']} CONV={totals['CONV']} NUM={totals['NUM']}",
         verdict,
         "",
     ]
