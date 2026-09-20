@@ -23,7 +23,8 @@ SPEC (Tier A) → ISSUE (ticket) → IMPLEMENT (owner) → DELIVER (~/inbox) →
 ```
 
 Chốt với chủ dự án 20/09/2026: **GitHub Issues là bảng công việc duy nhất**, **chỉ Arena push**,
-**chất lượng trước** (mọi PR code có review đối kháng), **M0 + M1 chạy song song**.
+**chất lượng trước** (mọi PR code có review đối kháng), **M0 + M1 chạy song song**,
+**cổng Unity theo lô**, **ruleset bảo vệ `main`**. Chi tiết thao tác: `06-WORKFLOW.md`.
 
 Bước nào tốn token nhất thì bước đó phải có script kiểm trước. Bước cổng script chạy **miễn phí**
 và đã chứng minh giá trị: nó tìm ra 30 vấn đề trong tài liệu khu 1–3 mà không dùng token nào (xem
@@ -39,12 +40,14 @@ và đã chứng minh giá trị: nó tìm ra 30 vấn đề trong tài liệu k
 | `03-TOKEN-BUDGET.md` | Định tuyến model theo loại việc, gói context chuẩn, phản mẫu, cách đo |
 | `04-UNITY-GATE.md` | Checklist cổng Unity gom lô + cách báo cáo kết quả về repo |
 | `05-KICKOFF-PROMPTS.md` | Prompt sẵn dán cho từng agent (copy nguyên khối) |
+| `06-WORKFLOW.md` | **Sổ tay vận hành**: luồng đi của một ticket, cách đồng bộ GitHub ↔ máy Unity, `.meta`, bảng lệnh, xử lý sự cố |
 
 ## Công cụ đã có
 
 | Công cụ | Chạy | Việc |
 |---|---|---|
 | `Tools/jumpcheck.py` | `python3 Tools/jumpcheck.py [--strict]` | Kiểm mọi liên kết bệ trong doc khu 1–3 bằng công thức khóa; ghi `Docs/TheSpireJumpCheck.txt` |
+| `Tools/inbox.py` | `python3 Tools/inbox.py T-0xx [--write]` | Ghép bài nộp của agent vào repo: xem diff, chặn file ngoài phạm vi, tự sinh `.meta` cho `.cs` mới, chạy cổng |
 
 ## Ba câu hỏi mỗi ticket phải trả lời được
 
