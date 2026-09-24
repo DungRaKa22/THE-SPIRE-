@@ -4,7 +4,7 @@
 > không ước lượng bằng mắt. Đây là khu dạy học: **không có mechanic động**, độ khó đến từ bố cục.
 >
 > Khu 1 dùng các bệ đánh số **01–40**. Các khối không đứng được (tường, sàn, trần, trang trí)
-> **không được đánh số** — quy ước này bắt buộc để `PlatformCoins` không nhận nhầm vào nhóm coin.
+> **không được đánh số** — quy ước này bắt buộc để validator và builder nhận đúng tuyến leo.
 
 ---
 
@@ -191,8 +191,8 @@ sự đưa về giữa khu. Khớp yêu cầu "không phải mọi sai sót đ�
 
 | Hạng mục | Giá trị |
 |---|---|
-| Bệ đánh số | 01–40 → `40 / 5 = 8` nhóm coin → **8 coin = 80 điểm** |
-| Quy ước tên | `"NN Tên"` — `PlatformCoins` đọc `name.Split(' ')[0]` |
+| Bệ đánh số | 01–40 (40 bệ) |
+| Quy ước tên | `"NN Tên"` — số đầu tên xác định thứ tự tuyến leo |
 | Không đánh số | `Ground`, `Left wall`, `Right wall`, `Machicolation`, mọi trang trí |
 | `summitHeight` khu 1 | **61.10 m** (HUD báo vượt khu) |
 | Ranh giới khu | **63.0 m** |
@@ -223,5 +223,5 @@ Con số thiết kế thật cần dùng là số tuyệt đối.
 - [ ] `Δy` mọi liên kết ≤ **2.64 m**.
 - [ ] Cú **10 → 11** thất bại khi `p > 0.85` (đập `Machicolation`) — kiểm tra âm để chắc
       bài học trần thấp thực sự hoạt động.
-- [ ] Tổng 40 bệ đánh số, 8 coin, `summitHeight = 61.10`.
+- [ ] Tổng 40 bệ đánh số, `summitHeight = 61.10`.
 - [ ] Mọi `SpriteRenderer` trong khu có sprite hợp lệ.

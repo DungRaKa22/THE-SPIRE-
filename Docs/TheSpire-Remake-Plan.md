@@ -29,7 +29,7 @@ Prompt sinh ảnh đầy đủ: xem **`Docs/TheSpire-ArtPrompts.md`**.
 | Scene | 4 scene rời (`NeonAscent`, `CyberpunkRooftops`, `JumpLab`, `SampleScene`) | Phải gộp về **1 scene** |
 | Level | Sinh bằng C# cứng trong `NeonAscentBuilder` | Cần format dữ liệu để dựng 8 khu, dễ chỉnh |
 | Cân bằng | `DummyController` có 7 tham số, chưa có tài liệu chuẩn | Cần **khóa thông số + ngân sách nhảy** |
-| Mechanic | Chỉ có bệ tĩnh + coin | Thiếu piston, băng chuyền, bệ điện, booster, trọng lực |
+| Mechanic | Chỉ có bệ tĩnh | Thiếu piston, băng chuyền, bệ điện, booster, trọng lực |
 | Art | 16 sprite runner + 4 prop cyberpunk | Cần art cho 7 thời kỳ + The Sky |
 | Lưu | `PlayerPrefs` theo `saveSlot`/slot | Giữ, thêm slot cho The Spire |
 | Kiểm tra | Predictor vật lý cho 35 bệ | Mở rộng cho mọi khu |
@@ -201,7 +201,7 @@ Thay vì C# cứng như hiện tại, mỗi khu mô tả bằng **dữ liệu k�
 ```
 SectorBlueprint {
   id, tên khu, chiềuCaoBắtĐầu, chiềuCaoKếtThúc
-  floors: [ { y, bệ: [ { x, loại, rộng, cao, mechanic } ], coinGroup } ]
+  floors: [ { y, bệ: [ { x, loại, rộng, cao, mechanic } ] } ]
   transition: khu kế tiếp
   palette, nhạc, ambience
 }
@@ -236,15 +236,16 @@ Sau đó chỉnh trực tiếp trong scene (như hiện tại), builder không g
 
 ### 2.6 Quy ước đánh số bệ (bắt buộc)
 
-`PlatformCoins.Begin` sắp xếp **toàn bộ** collider trong scene theo `int.Parse(name.Split(' ')[0])`
-rồi chia nhóm 5. Vì vậy:
+Số bệ là **khoá thứ tự tuyến leo**: `SpireChecks` và builder dựng scene đọc thứ tự này để kiểm và
+mọc liên kết theo đúng đường leo. Vì vậy:
 
 1. Số **duy nhất và tăng dần theo độ cao trên toàn tháp** (khu 1 = 01–40, khu 2 = 41–83, khu 3 từ 84).
-2. **Không** đánh số tường, sàn, trần, trang trí, vùng mechanic — nếu đánh số, chúng bị tính là bệ và coin rơi sai nhóm.
-3. Khu dài 43 bệ → `43 / 5 = 8` nhóm coin; 3 bệ cuối chưa đủ nhóm nên **không sinh coin**.
+2. **Không** đánh số tường, sàn, trần, trang trí, vùng mechanic — nếu đánh số, chúng bị tính là bệ
+   và làm lệch toàn bộ thứ tự tuyến leo.
+3. Số ở **token đầu tiên** của tên bệ (`"86 Coil Deck A"` ✓, `"E-A 86 Coil Deck"` ✗).
 
-> **Cần quyết định:** ~330 bệ → ~66 coin (660 điểm). Đề xuất giữ luật và coi coin là điểm tùy chọn,
-> hoặc đổi thành 1 coin / 8 bệ từ khu 4 trở lên. Chưa chốt.
+> **Đã chốt 20/09/2026:** cơ chế coin bị **loại bỏ hoàn toàn** (chỉ là demo) — không nhóm 5 bệ,
+> không điểm số. Kèm theo: blueprint không có trường `coinGroup`.
 
 ---
 
@@ -286,7 +287,7 @@ Tôi có **4 cách thay thế thực dụng** (chọn ở cuối tài liệu):
 1. **Viết prompt sinh ảnh chi tiết** cho từng asset (nhân vật, prop mỗi thời kỳ, nền mỗi khu) để bạn
    chạy bằng công cụ image-gen của bạn; tôi lo phần **cắt sprite, gán pivot, dựng Animator, gắn vào scene**
    bằng editor script (đúng như dự án đang làm).
-2. **Sinh pixel art bằng code C#** ngay trong Unity (như `PlatformCoins` tự vẽ sprite coin) — phù hợp
+2. **Sinh pixel art bằng code C#** ngay trong Unity (như sprite do code sinh trong `PlatformCoins`) — phù hợp
    cho prop hình học, ký hiệu, hạt, HUD, nền gradient nhiều lớp.
 3. **Blockout hình khối màu** trước (đúng Bước 3 trong tài liệu ý tưởng): dựng toàn tuyến bằng hình
    chữ nhật màu, khóa gameplay trước, thay art sau.
@@ -358,9 +359,9 @@ Cells: <liệt kê từng ô: tên + mô tả ngắn>.
 - Bảng kỷ lục theo khu (thời gian / số lần nhảy / cú rơi).
 
 **Kỹ thuật**
-- Pooling cho coin và hạt để 1 scene ~260 bệ vẫn mượt.
+- Pooling cho hạt và hiệu ứng để 1 scene ~260 bệ vẫn mượt.
 - `SectorStreamer` + LOD collider: khu không hoạt động tắt collider để giảm physics.
-- Deterministic RNG theo seed cho coin/trang trí (giữ như hiện tại).
+- Deterministic RNG theo seed cho trang trí (giữ như hiện tại).
 
 ---
 

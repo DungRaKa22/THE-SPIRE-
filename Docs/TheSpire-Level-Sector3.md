@@ -298,16 +298,16 @@ nên nếu không sửa, phản hồi thị giác quan trọng nhất của khu 
 hất điện và thanh dẫn nảy; `CyberRunnerVisual` đọc mốc đó. Giữ nguyên chữ ký `Bounce` để
 không phải sửa Animator.
 
-### Rủi ro #6 — `parsing` tên bệ của `PlatformCoins`
+### Rủi ro #6 — quy ước tên bệ
 
-`PlatformCoins.Begin` lọc theo:
+Validator và builder lọc bệ theo số ở **token đầu tiên** của tên:
 
 ```
 int.TryParse(p.name.Split(' ')[0], out _)  &&  !p.isTrigger  &&  p.enabled
 ```
 
 → **số phải là token đầu tiên.** `"86 Coil Deck A"` ✓ an toàn; `"E-A 86 Coil Deck"` ✗ sẽ bị
-bỏ qua (không tính là bệ) và làm lệch **toàn bộ** nhóm coin của khu 1–8 về sau.
+bỏ qua (không tính là bệ) và làm lệch **toàn bộ** thứ tự tuyến leo.
 Tên bệ điện **không** được chứa tiền tố chữ. Đưa vào validator (§10).
 
 ---
@@ -557,23 +557,19 @@ dãy bệ bắt rơi 74–80 của khu 2 (116–126 m). Một lần rơi tệ nh
 
 ---
 
-## 9. Đánh số & coin
+## 9. Đánh số bệ
 
 Số **duy nhất và tăng dần theo độ cao trên toàn tháp** (khu 1 = 01–40, khu 2 = 41–83,
-**khu 3 = 84–125**), vì `PlatformCoins.Begin` sắp xếp toàn bộ collider trong scene theo
-`int.Parse(name.Split(' ')[0])` rồi chia nhóm 5 (xem §5 rủi ro #6).
+**khu 3 = 84–125**) để thứ tự tuyến leo là duy nhất trên toàn tháp (xem §5 rủi ro #6).
 
 | Hạng mục | Giá trị |
 |---|---|
 | Bệ khu 3 | 84–125 (42 bệ) |
-| Nhóm coin | `42 / 5 = 8` nhóm → **8 coin = 80 điểm** |
-| Không sinh coin | 2 bệ cuối (124, 125) chưa đủ nhóm thứ 9 |
 | Không đánh số | `Insulator Mast`, `Busbar Gantry`, mọi trang trí, tường, trần |
 | `summitHeight` khu 3 | **194.0 m** (HUD báo vượt khu) |
-| Coin vào tổng | 8 / 80 điểm của tháp (khu 3 chiếm 13.0 % chiều cao → 12.5 % số coin) |
 
-> **Quyết định còn treo (giống khu 1–2):** giữ luật 1 coin / 5 bệ (toàn tháp ≈ 66 coin / 660 điểm),
-> hay đổi thành 1 coin / 8 bệ từ khu 4 để giảm mật độ. Chưa chốt.
+> **Đã chốt 20/09/2026:** bỏ hoàn toàn cơ chế coin — không nhóm 5 bệ, không điểm số.
+> Số bệ giữ nguyên vì phục vụ thứ tự tuyến leo và validator.
 
 ---
 
@@ -593,8 +589,8 @@ Số **duy nhất và tăng dần theo độ cao trên toàn tháp** (khu 1 = 01
       khoảng trống trên ≥ 3.2 m, trước ≥ 4.6 m.
 - [ ] Mọi thanh dẫn nảy vào được từ **một** phía, và hướng phóng khớp ký hiệu hiển thị.
 - [ ] Mọi bệ điện đứng **ngay sau một bệ tĩnh** ở lần xuất hiện đầu tiên của mỗi mạch.
-- [ ] Tên mọi bệ bắt đầu bằng số (`^\d+ `) — kiểm tra riêng để không phá nhóm coin.
-- [ ] 42 bệ đánh số, 8 coin, ranh giới khu = **194.0**.
+- [ ] Tên mọi bệ bắt đầu bằng số (`^\d+ `) — kiểm tra riêng để không phá thứ tự tuyến leo.
+- [ ] 42 bệ đánh số, ranh giới khu = **194.0**.
 
 ---
 

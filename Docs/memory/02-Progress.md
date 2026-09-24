@@ -2,6 +2,44 @@
 
 ## Đã xong
 
+### Vận hành nhóm (mới 20/09/2026)
+- ✅ **Sổ tay vận hành `Docs/team/06-WORKFLOW.md`** — 4 nơi chứa file (GitHub / máy Unity / sàn
+  Arena / máy agent), hai nhánh, luồng A (tài liệu, không cần Unity) và luồng B (code, cổng Unity
+  theo lô), quy tắc `.meta`, bảng lệnh theo vai, xử lý sự cố, kế hoạch một tuần, checklist dán tường.
+- ✅ `Tools/inbox.py` — ghép bài nộp của agent: dry-run mặc định, chặn `Assets/Scenes/**`,
+  `ProjectSettings/**`, file ngoài phạm vi; tự sinh `.meta` cho `.cs` mới; tự chạy `jumpcheck.py`.
+- ✅ **Repo đang PUBLIC** (agent clone đọc không cần token) và **Arena merge được PR** (kiểm chứng
+  bằng lỗi "still a draft" chứ không phải 403).
+- ✅ `Docs/team/` — hiến chương 4 agent, ma trận sở hữu file, pipeline 6 bước, DoR/DoD,
+  định tuyến model theo tầng A/B, quy trình cổng Unity gom lô, prompt khởi động cho 3 agent.
+- ✅ **Bảng công việc = GitHub Issues** (8 issue: #2 T-003, #3 T-003R, #4 T-009, #5 T-004,
+  #6 T-101, #7 T-102, #8 T-006, #9 T-201). **Hạn chế quyền đã đo:** Arena push + tạo issue +
+  tạo/sửa PR + review PR được; **không** comment/đóng/gắn nhãn issue (403) ⇒ trạng thái sống ghi ở
+  `Docs/team/02-BACKLOG.md`, chủ dự án đóng issue. Muốn tự động hoá hoàn toàn thì kết nối lại GitHub.
+- ✅ **Quy ước bảng bệ v2 (T-003)** — chốt trong `Docs/memory/01-Architecture.md`: cột `p` cũ đổi
+  thành `p_min` (mức tối thiểu đủ **cả** độ cao và tầm xa), thêm `p_max` (giới hạn trần/che khuất),
+  luật "liên kết căng" khi `p_max − p_min < 0.10`, kèm 2 ví dụ tính tay khớp công cụ.
+- ✅ `Tools/jumpcheck.py` — cổng kiểm ngân sách nhảy chạy bằng Python (0 token), ghi
+  `Docs/TheSpireJumpCheck.txt`. Chạy lần đầu trên khu 1–3 (125 bệ) đã phát hiện:
+  **HARD=0** (không có liên kết nào bất khả thi — tin tốt), **GEOM=4** lỗi hình học bảng ở khu 1
+  (2 dòng ghi Δx **thấp hơn** thực tế ⇒ bệ khó hơn tài liệu: `011 Choir Loft`, `012 Knight Statue`),
+  **CONV=19** dòng ghi `p` theo mức tối thiểu **chỉ độ cao** trong khi tài liệu tuyên bố `p` là
+  mức tối thiểu đầy đủ (khu 2: 17/48 dòng), **WEAK=7** dòng không khớp cách tính nào.
+
+### Quyết định của chủ dự án (20/09/2026)
+- ✅ **Bỏ hoàn toàn cơ chế coin** (chỉ là demo, THE SPIRE không có điểm số). Đã dọn coin khỏi:
+  `Docs/TheSpire-Level-Sector1/2/3.md`, `Docs/TheSpire-Remake-Plan.md` (§2.3 blueprint, §2.6, §5),
+  `Docs/TheSpire-ArtPrompts.md` (HUD), `README.md`, `Docs/memory/*`. Còn lại phải xoá trong code:
+  `PlatformCoins.cs`, `PlatformCoinPickup.cs`, SCORE trong `CyberpunkPresentation`, phần coin trong
+  `GameSession` và `NeonAscentChecks` → **ticket T-210**, để lại cho giai đoạn code.
+- ✅ **Chưa code gì mới cho tới khi thiết kế đủ 8 khu** (M2 vẫn đóng).
+- ✅ **Cổng Unity theo lô (D4)**: gom các PR đụng `Assets/**` rồi chủ dự án mở Unity một lần;
+  PR tài liệu/tool không cần cổng.
+- ✅ **Bật ruleset bảo vệ `main` (D6)**: chủ dự án tạo (Arena không có quyền), hướng dẫn ở
+  `Docs/team/01-PIPELINE.md` §2.
+- ✅ T-005 một phần: board Issues đã tạo (#2–#9); không gắn được nhãn (403) ⇒ ghi nhãn trong
+  `Docs/team/02-BACKLOG.md`.
+
 ### Tài liệu thiết kế
 - ✅ Kế hoạch tổng `TheSpire-Remake-Plan.md` — thông số khóa, 525 m, lộ trình,
   §1.5b "cửa sổ thời gian" làm thước đo chung, quyết định đã chốt ghi ở đầu file.
@@ -31,6 +69,9 @@
 
 ## Chưa làm
 
+- ⏳ **Ticket T-003 (tầng A):** chốt **quy ước bảng bệ v2** — định nghĩa cột `p` và cách ghi giới
+  hạn trần/che khuất. Phải xong **trước khi** ai đó điền bảng khu 4–8, nếu không mỗi agent sẽ
+  theo một quy ước khác nhau. Ticket T-007 (tầng B) sửa 4 lỗi hình học khu 1.
 - ⏳ **Chạy play-check khu điện trong Play Mode** (menu JumpDummy → Run Electric
   Platform Checks) — chỉ người dùng làm được; kết quả về
   `Docs/TheSpireElectricValidation.txt`. Cho tới khi đó cơ chế hất điện chỉ được
